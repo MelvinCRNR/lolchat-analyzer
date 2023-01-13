@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Ban rate of my message - League of Legends</title>
+</head>
+<body>
+<h1>Ban rate of my message</h1>
+<h2>Enter the desired phrase to display its ban rate</h2>
+<form method="POST">
+    <input name="text">
+    <input type="submit">
+    <p>
+        {% with text = get_flashed_messages() %}
+        {% if text %}
+    <ul>
+        <li>{{ text[0] }}</li>
+    </ul>
+    {% endif %}
+    {% endwith %}
+    </p>
+</form>
+</body>
+</html>
